@@ -57,6 +57,7 @@ SRC = $(PATH_SRC)ft_strlen.c \
 	$(PATH_SRC)ft_putnbr_fd.c \
 	$(PATH_SRC)ft_lstnew.c \
 	$(PATH_SRC)ft_count_char.c \
+	$(PATH_SRC)ft_strclr.c \
 	$(PATH_SRC)ft_strlenc.c \
 	$(PATH_SRC)ft_lstadd.c \
 	$(PATH_SRC)ft_lstdelone.c \

@@ -17,22 +17,17 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
+# include <sys/types.h>
+# include <fcntl.h>
+# include <sys/stat.h>
+# include <limits.h>
+# include <stdint.h>
 
-typedef struct		s_list
-{
-	void			*content;
-	size_t			content_size;
-	struct s_list	*next;
-}					t_list;
+# define W_END "end"
+# define W_BEGIN "beginning"
+# define BUFF_SIZE 3
 
 void				ft_arraydel(void **array);
-void				ft_dellst(void *lst, size_t content_size);
-t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
-void				ft_lstadd(t_list **alst, t_list *new);
-t_list				*ft_lstnew(void const *content, size_t content_size);
 size_t				ft_strlenc(char const *s, char c);
 size_t				ft_count_char(char const *ar, char c);
 void				*ft_memalloc(size_t size);
@@ -66,6 +61,7 @@ void				*ft_memccpy(void *d, const void *s, int c, size_t n);
 void				*ft_memmove(void *dest, const void *source, size_t len);
 int					ft_memcmp(const void *str1, const void *str2, size_t n);
 size_t				ft_strlen(const char *s);
+size_t				ft_strlen2(const char **s);
 char				*ft_strdup(const char *s1);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strncpy(char *dst, const char *src, size_t len);
@@ -87,5 +83,12 @@ int					ft_isascii(int c);
 int					ft_isprint(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
+int					get_next_line(const int fd, char **line);
+char				*ft_itoa_base(uint64_t n, int base);
+char				*str_filled(char *s, size_t final_size, char filler_symb, char *position);
+uint32_t			rev_uint32(uint32_t n);
+uint64_t			rev_uint64(uint64_t n);
+uint32_t			rotr32(uint32_t x, uint32_t n);
+uint32_t			rotl32(uint32_t x, uint32_t n);
 
 #endif

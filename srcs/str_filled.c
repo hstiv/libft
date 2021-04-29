@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   str_filled.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hstiv <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/12/08 15:42:37 by hstiv             #+#    #+#             */
+/*   Updated: 2018/12/31 13:46:18 by hstiv            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int			pos_encounter(int len, char *position)
@@ -10,7 +22,8 @@ static int			pos_encounter(int len, char *position)
 		return (ft_atoi(position) - 1);
 }
 
-char				*str_filled(char *s, size_t final_size, char filler_symb, char *position)
+char				*str_filled(char *s, size_t final_size,
+							char filler_symb, char *position)
 {
 	size_t			len;
 	char			*str;

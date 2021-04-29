@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hstiv <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/06 17:02:21 by hstiv             #+#    #+#             */
-/*   Updated: 2019/01/07 20:13:20 by hstiv            ###   ########.fr       */
+/*   Created: 2018/12/08 15:42:37 by hstiv             #+#    #+#             */
+/*   Updated: 2018/12/31 13:46:18 by hstiv            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-size_t			ft_strlen2(const char **s)
+size_t				ft_strlen2(const char **s)
 {
-	size_t		i;
+	size_t			i;
 
 	if (s == NULL)
 		return (0);

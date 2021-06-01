@@ -22,6 +22,7 @@
 # include <sys/stat.h>
 # include <limits.h>
 # include <stdint.h>
+# include <signal.h>
 
 # define W_END "end"
 # define W_BEGIN "beginning"
@@ -87,6 +88,7 @@ int					get_next_line(const int fd, char **line);
 char				*ft_itoa_base(uint64_t n, int base);
 char				*str_filled(char *s, size_t final_size,
 							char filler_symb, char *position);
+uint16_t			rev_uint16(uint16_t n);
 uint32_t			rev_uint32(uint32_t n);
 uint64_t			rev_uint64(uint64_t n);
 uint32_t			rotr32(uint32_t x, uint32_t n);

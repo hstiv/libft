@@ -23,7 +23,9 @@
 # include <limits.h>
 # include <stdint.h>
 # include <signal.h>
+# include <math.h>
 
+# define SQRT_NEWTON_ACCURACY 0.0001
 # define W_END "end"
 # define W_BEGIN "beginning"
 # define BUFF_SIZE 3
@@ -95,5 +97,6 @@ uint32_t			rotr32(uint32_t x, uint32_t n);
 uint32_t			rotl32(uint32_t x, uint32_t n);
 int					ft_abs(int x);
 double				ft_pow(double nb, uint8_t power);
+double				ft_sqrt_newton(const double nb);
 
 #endif

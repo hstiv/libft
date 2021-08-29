@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static	int		ft_memory(char const *s)
+static int	ft_memory(char const *s)
 {
 	int			l;
 
@@ -22,7 +22,7 @@ static	int		ft_memory(char const *s)
 	return (l);
 }
 
-char			*ft_strtrim(char const *s)
+char	*ft_strtrim(char const *s)
 {
 	char		*s1;
 	int			i;
@@ -36,7 +36,8 @@ char			*ft_strtrim(char const *s)
 		l--;
 	if (l < 0)
 		l = 0;
-	if (!(s1 = (char *)malloc(sizeof(char) * (l + 1))))
+	s1 = (char *)malloc(sizeof(char) * (l + 1));
+	if (!s1)
 		return (NULL);
 	s += i;
 	i = -1;

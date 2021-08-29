@@ -14,11 +14,12 @@
 #include <string.h>
 #include "libft.h"
 
-void				*ft_memalloc(size_t size)
+void	*ft_memalloc(size_t size)
 {
 	void			*s;
 
-	if (!(s = malloc(sizeof(*s) * (size))))
+	s = malloc(sizeof(*s) * (size));
+	if (!s)
 		return (NULL);
 	return (ft_memset(s, 0, size));
 }

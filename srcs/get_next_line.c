@@ -12,35 +12,50 @@
 
 #include "libft.h"
 
-static int		make_read_line(char **gnl, int fd, char **line)
+static int	make_read_line(char **gnl, int fd, char **line)
 {
 	size_t		i;
 	char		*loc;
 
 	i = ft_strlenc(gnl[fd], '\n');
-	if (!(*line = ft_strsub(gnl[fd], 0, i)))
+	*line = ft_strsub(gnl[fd], 0, i);
+	if (!(*line))
 		return (-1);
-	if (!(loc = ft_strsub(gnl[fd], i + 1, ft_strlen(gnl[fd]))))
+	loc = ft_strsub(gnl[fd], i + 1, ft_strlen(gnl[fd]));
+	if (!loc)
 		return (-1);
 	free(gnl[fd]);
 	gnl[fd] = loc;
 	return (1);
 }
 
-static int		make_next_line(char **gnl, char **line, int fd)
+static int	make_next_line(char **gnl, char **line, int fd)
 {
 	int			i;
 
 	i = ft_strlenc(gnl[fd], '\n');
 	if (gnl[fd][i] == '\n')
 		return (make_read_line(gnl, fd, line));
-	if (!(*line = ft_strdup(gnl[fd])))
+	*line = ft_strdup(gnl[fd]);
+	if (!(*line))
 		return (-1);
 	ft_strdel(&gnl[fd]);
 	return (1);
 }
 
-int				get_next_line(const int fd, char **line)
+static int	body(char **gnl, char **loc, const int fd, char *buf)
+{
+	if (!gnl[fd])
+		gnl[fd] = ft_strnew(1);
+	*loc = ft_strjoin(gnl[fd], buf);
+	if (!(*loc))
+		return (-1);
+	free(gnl[fd]);
+	gnl[fd] = *loc;
+	return (1);
+}
+
+int	get_next_line(const int fd, char **line)
 {
 	static char	*gnl[10240];
 	char		buf[BUFF_SIZE + 1];
@@ -49,18 +64,15 @@ int				get_next_line(const int fd, char **line)
 
 	if (!line || fd < 0 || read(fd, NULL, 0) < 0)
 		return (-1);
-	while ((!ft_strchr(gnl[fd], '\n')) &&
-			(y = read(fd, (void *)buf, BUFF_SIZE)) > 0)
+	y = read(fd, (void *)buf, BUFF_SIZE);
+	while ((!ft_strchr(gnl[fd], '\n')) && y > 0)
 	{
 		buf[y] = '\0';
-		if (!gnl[fd])
-			gnl[fd] = ft_strnew(1);
-		if (!(loc = ft_strjoin(gnl[fd], buf)))
+		if (body(gnl, &loc, fd, buf) < 0)
 			return (-1);
-		free(gnl[fd]);
-		gnl[fd] = loc;
 		if (ft_strchr(gnl[fd], '\n'))
 			return (make_read_line(gnl, fd, line));
+		y = read(fd, (void *)buf, BUFF_SIZE);
 	}
 	if (y < 0)
 		return (-1);

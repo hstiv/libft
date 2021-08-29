@@ -1,6 +1,6 @@
 #include "libft.h"
 
-static int pt2(const double nb, double upper, double lower)
+static int	pt2(const double nb, double upper, double lower)
 {
 	double			sqrt;
 

@@ -14,7 +14,7 @@
 #include <string.h>
 #include "libft.h"
 
-char				*ft_strsub(char const *s, unsigned int start, size_t len)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	char			*str;
 	size_t			i;
@@ -22,7 +22,8 @@ char				*ft_strsub(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (!s)
 		return (NULL);
-	if (!(str = ft_strnew(len)))
+	str = ft_strnew(len);
+	if (!str)
 		return (NULL);
 	while (s[start] != '\0' && len)
 	{

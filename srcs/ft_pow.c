@@ -1,4 +1,4 @@
-# include "libft.h" 
+#include "libft.h" 
 
 double	ft_pow(double nb, uint8_t power)
 {

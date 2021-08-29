@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int			pos_encounter(int len, char *position)
+static int	pos_encounter(int len, char *position)
 {
 	if (!ft_strcmp(position, "beginning"))
 		return (len);
@@ -22,13 +22,14 @@ static int			pos_encounter(int len, char *position)
 		return (ft_atoi(position) - 1);
 }
 
-char				*str_filled(char *s, size_t final_size,
-							char filler_symb, char *position)
+char	*str_filled(char *s, size_t final_size,
+			char filler_symb, char *position)
 {
 	size_t			len;
 	char			*str;
 
-	if (!s || !(str = ft_strnew(final_size)))
+	str = ft_strnew(final_size);
+	if (!s || !str)
 		return (NULL);
 	len = ft_strlen(s);
 	ft_memset(str, filler_symb, final_size);

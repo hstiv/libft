@@ -14,7 +14,7 @@
 #include <string.h>
 #include "libft.h"
 
-int						ft_memcmp(const void *str1, const void *str2, size_t n)
+int	ft_memcmp(const void *str1, const void *str2, size_t n)
 {
 	unsigned char	*s1;
 	unsigned char	*s2;

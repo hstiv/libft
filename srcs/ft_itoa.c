@@ -13,14 +13,14 @@
 #include <stdlib.h>
 #include "libft.h"
 
-static int			ft_itoa_sign(int n)
+static int	ft_itoa_sign(int n)
 {
 	if (n < 0)
 		return (-1);
 	return (1);
 }
 
-char				*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char			*s;
 	char			res[11];

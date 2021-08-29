@@ -14,7 +14,7 @@
 #include <string.h>
 #include "libft.h"
 
-char				*ft_strnew(size_t size)
+char	*ft_strnew(size_t size)
 {
 	char			*str;
 

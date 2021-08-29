@@ -12,7 +12,7 @@
 
 #include <stdint.h>
 
-uint64_t		rev_uint64(uint64_t n)
+uint64_t	rev_uint64(uint64_t n)
 {
 	return ((n & 0xff00000000000000) >> 56
 		| (n & 0x00ff000000000000) >> 40

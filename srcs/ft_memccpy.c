@@ -12,14 +12,14 @@
 
 #include <string.h>
 
-void			*ft_memccpy(void *dest, const void *source, int c, size_t n)
+void	*ft_memccpy(void *dest, const void *source, int c, size_t n)
 {
 	if (!(dest || source))
 		return (NULL);
 	while (n--)
 	{
-		*(unsigned char*)dest = *(unsigned char*)source;
-		if (*(unsigned char*)dest == (unsigned char)c)
+		*(unsigned char *)dest = *(unsigned char *)source;
+		if (*(unsigned char *)dest == (unsigned char)c)
 			return (dest + 1);
 		dest++;
 		source++;

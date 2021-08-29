@@ -12,7 +12,7 @@
 
 #include <string.h>
 
-void				*ft_memmove(void *dest, const void *source, size_t len)
+void	*ft_memmove(void *dest, const void *source, size_t len)
 {
 	size_t			i;
 

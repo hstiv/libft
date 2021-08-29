@@ -94,5 +94,6 @@ uint64_t			rev_uint64(uint64_t n);
 uint32_t			rotr32(uint32_t x, uint32_t n);
 uint32_t			rotl32(uint32_t x, uint32_t n);
 int					ft_abs(int x);
+double				ft_pow(double nb, uint8_t power);
 
 #endif

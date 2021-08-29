@@ -21,7 +21,7 @@ SRC_NAME	=	ft_strlen.c ft_strdup.c ft_strcpy.c ft_strncpy.c \
 				ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_count_char.c \
 				ft_strclr.c ft_strlenc.c ft_arraydel.c ft_strlen2.c \
 				get_next_line.c ft_itoa_base.c str_filled.c rev_uint16.c \
-				rev_uint32.c rev_uint64.c rotr32.c rotl32.c ft_abs.c
+				rev_uint32.c rev_uint64.c rotr32.c rotl32.c ft_abs.c ft_pow.c
 
 OBJ_NAME	=	$(SRC_NAME:.c=.o)
 INC_NAME	=	libft.h

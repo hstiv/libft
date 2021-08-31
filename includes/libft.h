@@ -24,6 +24,7 @@
 # include <stdint.h>
 # include <signal.h>
 # include <math.h>
+# include <stdarg.h>
 
 # define SQRT_NEWTON_ACCURACY 0.0001
 # define W_END "end"
@@ -98,5 +99,6 @@ uint32_t			rotl32(uint32_t x, uint32_t n);
 int					ft_abs(int x);
 double				ft_pow(double nb, uint8_t power);
 double				ft_sqrt_newton(const double nb);
+void				mprintf(const char *format, ...);
 
 #endif
